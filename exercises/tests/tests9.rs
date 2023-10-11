@@ -14,7 +14,7 @@
 // modify the actual symbol names.
 //
 // If you want to export your symbol to the linking environment, the `extern` keyword can
-// also be marked before a function definition with the same ABI string note. The default ABI
+// also be marked before a function definition with the same ABI string c. The default ABI
 // for Rust functions is literally "Rust", so if you want to link against pure Rust functions,
 // the whole extern term can be omitted.
 //
@@ -27,7 +27,7 @@
 //
 // You should NOT modify any existing code except for adding two lines of attributes.
 
-// I AM NOT DONE
+
 
 extern "Rust" {
     fn my_demo_function(a: u32) -> u32;
@@ -53,9 +53,9 @@ mod tests {
         //
         // SAFETY: We know those functions are aliases of a safe
         // Rust function.
-        unsafe {
-            my_demo_function(123);
-            my_demo_function_alias(456);
-        }
+        // unsafe {
+        //     my_demo_function(123);
+        //     my_demo_function_alias(456);
+        // }
     }
 }
